@@ -23,7 +23,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
   Image:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v4
        name: Set up JDK 17
