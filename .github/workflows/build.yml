@@ -19,7 +19,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: maven build
-        run: mvn clean package 
+        run: apt install maven -y && mvn clean package
+        # run: mvn clean package 
       - name: upload artifact
         uses: actions/upload-artifact@v6
         with:
