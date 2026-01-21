@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: gowtham
+    runs-on: linux
     steps:
       - uses: actions/checkout@v6
       - name: java jdk17
@@ -27,7 +27,7 @@ jobs:
           path: target/*.war
   Image:
     
-    runs-on: gowtham
+    runs-on: linux
     needs: build
     steps:
       - uses: actions/checkout@v6
