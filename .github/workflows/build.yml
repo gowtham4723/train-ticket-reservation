@@ -10,7 +10,8 @@ on:
 jobs:
   build:
 
-    runs-on: linux
+    #runs-on: linux
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - name: java jdk17
@@ -30,7 +31,8 @@ jobs:
           path: target/*.war
   Image:
     
-    runs-on: linux
+    #runs-on: linux
+    runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v6
