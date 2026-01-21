@@ -19,7 +19,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: maven build
-        run: echo "Snp@1234567890" | sudo -S apt install -y maven
+        run: echo "SNP@1234567890" | sudo -S apt install -y maven
       - name: clean package
         run: mvn clean package 
       - name: upload artifact
