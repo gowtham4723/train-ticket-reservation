@@ -50,4 +50,4 @@ jobs:
           context: .
           push: false
           tags: ttrimage:v1
-          file: .
+          file: ./Dockerfile
