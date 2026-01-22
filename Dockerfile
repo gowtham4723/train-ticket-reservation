@@ -1,16 +1,11 @@
-# Use the official Tomcat image
-FROM tomcat:9-jdk17
+FROM tomcat:9.0-jdk17-temurin
 
-# Copy the WAR file from the target directory into Tomcat's webapps folder
-COPY target/*.war /usr/local/tomcat/webapps/
+# Remove default apps
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-#RUN chowm -R ubuntu:ubuntu /usr/local/tomcat/webapps/
+# Copy WAR with fixed name
+COPY target/trainbook.war /usr/local/tomcat/webapps/ROOT.war
 
-# Apply permissions to the copied WAR file(s)
-RUN chmod 755 /usr/local/tomcat/webapps/*.war
-
-# Expose the Tomcat default port
 EXPOSE 8080
 
-# Start Tomcat
 CMD ["catalina.sh", "run"]
