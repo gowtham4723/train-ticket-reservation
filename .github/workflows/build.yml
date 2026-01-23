@@ -13,7 +13,7 @@ jobs:
     runs-on: linux
     
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - name: java jdk17
         uses: actions/setup-java@v5
         with:
@@ -25,7 +25,7 @@ jobs:
       - name: clean package
         run: mvn clean package 
       - name: upload artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifact
           path: target/*.war
@@ -35,7 +35,7 @@ jobs:
     
     needs: build
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - name: artifact
         uses: actions/download-artifact@v5
       - name: docker setup
