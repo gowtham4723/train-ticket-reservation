@@ -56,5 +56,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ttrimage:v1
+          tags: gowtham4723/ttrimage:v1
           file: ./Dockerfile
